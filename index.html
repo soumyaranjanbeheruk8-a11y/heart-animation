@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Love You Heart ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.scene {
+    width: 95vw;
+    max-width: 650px;
+    animation: heartbeat 2s ease-in-out infinite;
+    transform-style: preserve-3d;
+}
+
+svg {
+    width: 100%;
+    overflow: visible;
+    transform-style: preserve-3d;
+    animation: rotate3d 8s ease-in-out infinite;
+}
+
+/* Main heart curves */
+.heartPath {
+    fill: none;
+}
+
+/* I LOVE YOU */
+.love {
+    fill: #ff8fbd;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    filter: url(#glow);
+}
+
+/* Extra depth */
+.depth {
+    fill: #ff4f9a;
+    opacity: .35;
+}
+
+/* Heartbeat */
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.035);
+    }
+}
+
+/* 3D movement */
+@keyframes rotate3d {
+    0% {
+        transform: rotateY(-8deg) rotateX(3deg);
+    }
+
+    50% {
+        transform: rotateY(8deg) rotateX(-3deg);
+    }
+
+    100% {
+        transform: rotateY(-8deg) rotateX(3deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+
+<svg viewBox="0 0 600 520">
+
+<defs>
+
+<!-- Heart shape -->
+<path id="heart"
+d="
+M300 455
+C270 420 90 315 90 165
+C90 65 215 55 300 160
+C385 55 510 65 510 165
+C510 315 330 420 300 455
+Z
+"/>
+
+<!-- Pink glow -->
+<filter id="glow"
+x="-50%" y="-50%"
+width="200%"
+height="200%">
+
+<feGaussianBlur
+stdDeviation="2.5"
+result="blur"/>
+
+<feMerge>
+<feMergeNode in="blur"/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+
+</filter>
+
+</defs>
+
+
+<!--
+================================================
+MULTIPLE I LOVE YOU LAYERS
+================================================
+-->
+
+<!-- Back depth layers -->
+<g class="depth">
+
+<text class="love">
+<textPath href="#heart" startOffset="0%">
+I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU •
+I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU •
+<animate attributeName="startOffset"
+from="0%" to="100%"
+dur="7s"
+repeatCount="indefinite"/>
+</textPath>
+</text>
+
+<text class="love" transform="translate(0,7)">
+<textPath href="#heart" startOffset="20%">
+I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU •
+I LOVE YOU • I LOVE YOU • I LOVE YOU •
+<animate attributeName="startOffset"
+from="20%" to="120%"
+dur="7s"
+repeatCount="indefinite"/>
+</textPath>
+</text>
+
+<text class="love" transform="translate(0,14)">
+<textPath href="#heart" startOffset="40%">
+I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU •
+I LOVE YOU • I LOVE YOU •
+<animate attributeName="startOffset"
+from="40%" to="140%"
+dur="7s"
+repeatCount="indefinite"/>
+</textPath>
+</text>
+
+</g>
+
+
+<!-- Main bright layers -->
+
+<text class="love" transform="translate(0,-7)">
+<textPath href="#heart" startOffset="10%">
+I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU •
+I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU •
+<animate attributeName="startOffset"
+from="10%" to="110%"
+dur="6s"
+repeatCount="indefinite"/>
+</textPath>
+</text>
+
+
+<text class="love">
+<textPath href="#heart" startOffset="25%">
+I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU •
+I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU •
+<animate attributeName="startOffset"
+from="25%" to="125%"
+dur="6s"
+repeatCount="indefinite"/>
+</textPath>
+</text>
+
+
+<text class="love" transform="translate(0,7)">
+<textPath href="#heart" startOffset="40%">
+I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU •
+I LOVE YOU • I LOVE YOU • I LOVE YOU •
+<animate attributeName="startOffset"
+from="40%" to="140%"
+dur="6s"
+repeatCount="indefinite"/>
+</textPath>
+</text>
+
+
+<text class="love" transform="translate(0,14)">
+<textPath href="#heart" startOffset="55%">
+I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU •
+I LOVE YOU • I LOVE YOU • I LOVE YOU •
+<animate attributeName="startOffset"
+from="55%" to="155%"
+dur="6s"
+repeatCount="indefinite"/>
+</textPath>
+</text>
+
+
+<text class="love" transform="translate(0,21)">
+<textPath href="#heart" startOffset="70%">
+I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU •
+I LOVE YOU • I LOVE YOU •
+<animate attributeName="startOffset"
+from="70%" to="170%"
+dur="6s"
+repeatCount="indefinite"/>
+</textPath>
+</text>
+
+</svg>
+
+</div>
+
+</body>
+</html>
